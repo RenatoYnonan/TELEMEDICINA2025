@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static 'css/style-generales.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{%  static 'css/style-registro.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="contenedor-container-registro">
+        <div class="content-item-registro">
+
+        </div>
+        <div class="content-item-registro">
+            <form class="registro-especialista" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ wizard.management_form }}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="{{ wizard.form.nombre_completo.id_for_label }}">Nombre:</label>
+                        {{ wizard.form.nombre_completo }}
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="{{ wizard.form.apellido.id_for_label }}">Nombre:</label>
+                        {{ wizard.form.apellido }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="{{ wizard.form.tipo_documento.id_for_label }}">Nombre:</label>
+                        {{ wizard.form.tipo_documento }}
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="{{ wizard.form.numero_documento.id_for_label }}">Nombre:</label>
+                        {{ wizard.form.numero_documento }}
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="{{ wizard.form.Genero.id_for_label }}">Nombre:</label>
+                        {{ wizard.form.Genero }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="{{ wizard.form.especialidad.id_for_label }}">Especialidad:</label>
+                        {{ wizard.form.especialidad }}
+                    </div>
+                    <div class="col-sm-8">
+                        <label for="{{ wizard.form.cmp.id_for_label }}">N° Colegiatura:</label>
+                        {{ wizard.form.cmp }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="{{ wizard.form.experiencia.id_for_label }}">Años Exp:</label>
+                        {{ wizard.form.experiencia }}
+                    </div>
+                    <div class="col-sm-8">
+                        <label for="{{ wizard.form.edad.id_for_label }}">Edad:</label>
+                        {{ wizard.form.edad }}
+                    </div>
+                </div>
+
+                <div>
+                    {% if wizard.steps.prev %}
+                    <button class="btn-registro" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">Anterior</button>
+                    {% endif %}
+                    <button class="btn-registro" type="submit">{% if wizard.steps.last %}Siguiente{% else %}Siguiente{% endif %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

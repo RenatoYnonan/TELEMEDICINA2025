@@ -1,0 +1,142 @@
+body.body-esp-ge{
+    background-color: #E6E8F4;
+}
+
+div.encabezado-esp {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding: 15px 70px;
+    background-color: #FFF;
+    border-radius: 20px;
+}
+
+h1.title-search-esp{
+    font: bold 35px/45px 'poppins',sans-serif;
+}
+
+p.p-search-esp,
+h3.esp-title,
+h1.title-search-esp{
+    color: #909398;
+    margin: 0px !important;
+}
+
+h3.esp-title{
+    margin: 0px !important;
+    font:  bold 25px/35px 'poppins', sans-serif;
+}
+
+h5.card-title{
+    margin: 0px !important;
+    font: 500 18px/25px 'poppins',sans-serif;
+}
+
+div.grid-esp-001 {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+div.item-grid-esp {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFF;
+    border-radius: 20px;
+
+    ul {
+        margin: 0px !important;
+        padding: 0px !important;
+        list-style: none;
+    }
+
+    li{
+        font: 400 17px/30px 'poppins',sans-serif;
+    }
+}
+
+div.div-boody-esp{
+    padding: 15px 25px;
+}
+
+
+div.div-flex-just-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #DEDEDE;
+
+    .fa-angle-right{
+        font-size: 25px;
+    }
+}
+
+div.div-footer-esp{
+    padding: 15px 25px;
+
+    span{
+        font: 500 17px/25px 'poppins',sans-serif;
+        color: blue
+    }
+}
+
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.fa-circle-right,
+.fa-circle-left{
+    font-size: 30px;
+    margin-top: 4px;
+}
+
+.step-links{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+
+
+.pagination .current-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 5px 15px;
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    border-radius: 50% 50%;
+    color: #FFF;
+}
+
+.step-links span {
+    font-size: 14px;
+    color: #333;
+}
+
+img.img-map{
+    object-fit: cover;
+    max-height: 450px;
+    width: 100%;
+}
+
+
+/* CONTENEDOR DE LISTADO DE ESPECIALIDADES */
+
+div.cont-esp-list{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat( auto-fit, minmax(500px, 1fr));
+}

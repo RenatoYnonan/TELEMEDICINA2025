@@ -1,0 +1,66 @@
+{% extends 'panel-control/index.html' %}
+{% block content %}
+<div class="btn-add-001">
+    <h4>Listado de Doctores</h4>
+    <a href="{% url 'doctores:new-doctores' %}" class="btn btn-secondary">Nuevo Doctor</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Picture</th>
+            <th scope="col">Nombre</th>
+
+            <th scope="col">N° Colegiatura</th>
+            <th scope="col">Correo Electrónico</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dc in doctores %}
+        <tr>
+
+            <td class="img-center"><img class="img-dc-picture" src="{{ dc.picture.url }}" alt=""></td>
+            <td class="th-center">{{ dc.nombre_completo }}</td>
+            <td class="th-center">{{ dc.especialidad.nombre_especialidad }}</td>
+            <td class="th-center">{{ dc.cmp }}</td>
+            <td class="th-center">{{ dc.correo_electronico }}</td>
+            <td class="th-center">{{ dc.estado }}</td>
+            <td class="th-center">
+                <a href="{% url 'doctores:edit-doctores' dc.pk  %}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+                <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<!-- MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Guardar Doctor</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

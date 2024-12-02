@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static 'css/style-generales.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{%  static 'css/especialidades.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/style.css' %}">
+
+</head>
+
+<body class="body-esp-ge">
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar scroll</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll" style="justify-content: space-around;">
+                <form class="d-flex" style="gap: 0.5rem;">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+                <div class="d-flex" style="gap: 0.5rem;">
+                    <a class="btn btn-warning" href="">Registrarme</a>
+                    <a class="btn btn-warning" href="">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+    
+    <section>
+        <div class="container">
+            {% block content-especialidades %}{% endblock %}
+            {% block list-especialidades %}
+            <div class="encabezado-esp">
+                <div>
+                    <img src="{% static 'images/doctor.svg' %}" alt="">
+                </div>
+                <div>
+                    <h1 class="title-search-esp">Buscar por especialidades médicas</h1>
+                    <p class="p-search-esp">Contamos con los especialistas más destacados en distintas regiones del
+                        país.</p>
+                </div>
+            </div>
+            <br>
+            <div class="grid-esp-001">
+                {% for es in page_obj %}
+                <div class="item-grid-esp"> 
+                    <div class="div-flex-just-content">
+                        <h3 class="esp-title">{{ es.nombre_especialidad}}</h3>
+                        <a href="{% url 'list-especialidad' slug=es.slug %}"><i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="div-boody-esp">
+                        <ul>
+                            <li>{{ es.nombre_especialidad}} online</li>
+                            <li>{{ es.nombre_especialidad}} Lima</li>
+                            <li>{{ es.nombre_especialidad}} Tarapoto</li>
+                            <li>{{ es.nombre_especialidad}} San Martín</li>
+                        </ul>
+                    </div>
+                    <div class="div-footer-esp">
+                        <span>Ver todo +</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+
+                    <a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-circle-left   "></i></a>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    {% if num == page_obj.number %}
+                    <!-- Número de página actual sin enlace -->
+                    <span class="current-page">{{ num }}</span>
+                    {% else %}
+                    <!-- Enlace a las otras páginas -->
+                    <a href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-circle-right"></i></a>
+                    {% endif %}
+                </span>
+            </div>
+            {% endblock %}
+
+
+
+
+        </div>
+
+    </section>
+</body>
+
+</html>
