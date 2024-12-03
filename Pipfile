@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 pillow = "*"
 django-bootstrap-v5 = "*"
 django-formtools = "*"
+django = "==4.2.16"
 
 [dev-packages]
 

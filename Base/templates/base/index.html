@@ -1,1 +1,454 @@
-<h1>Pagina Principal</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style-pagina-principal.css' %}">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="inicio-header" id="inicio">
+        <div class="header">
+            <img src="imagenes/logo.png" alt="Logo">
+            
+            <div class="text-a">
+                <a href="#">Cómo </a>
+                <a href="#">Pregunta al especialista</a>
+                <a href="#">Soy profesional médico</a>
+            </div>
+            
+            <div class="boton">
+                <button class="registro">Registrarme <ion-icon name="chevron-down-outline"></ion-icon></button>
+                <button class="login">Iniciar Sesión</button>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="cont-inicio">
+            <div class="img-fondo">
+                <img src="imagenes/inicio.png" alt="Doctor sonriente">
+                
+                <div class="contenido-inicio">
+                    <h1>Citas médicas a tu alcance desde donde estés</h1>
+                    <p>Encuentra especialidades de salud disponibles en tu área, o pára atender tu consulta online.</p>
+                </div>
+
+                <!-- Botones de selección -->
+                <div class="select">
+                    <button class="select-btn">Cita Presencial</button>
+                    <button class="select-btn">Cita Online</button>
+                    <button class="select-btn">Cita Rápida</button>
+                </div>
+
+                <!-- Barra de búsqueda -->
+                <div class="busqueda">
+                    <div class="dropdown">
+                        <button class="dropdown-button">especialidad</button>
+                        <div class="dropdown-options">
+                            <a href="#">Cardiología</a>
+                            <a href="#">Dermatología</a>
+                            <a href="#">Estomatología</a>
+                            <a href="#">Psicología</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropdown-button">Lugar</button>
+                        <div class="dropdown-options">
+                            <a href="#">Lima</a>
+                            <a href="#">Tarapoto</a>
+                            <a href="#">Trujillo</a>
+                            <a href="#">Huancayo</a>
+                        </div>
+                    </div>
+
+                    <button class="search">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <nav class="specialties-nav">
+            <h2 class="specialties-title">Especialidades:</h2>
+            <div class="specialties-p">
+                <p class="specialty-p">Pediatría</p>
+                <p class="specialty-p">Nutrición</p>
+                <p class="specialty-p">Cardiología</p>
+                <p class="specialty-p">Psicología</p>
+                <p class="specialty-p">Obstetricia</p>
+                <p class="specialty-p">Ginecologia</p>
+                <p class="specialty-p">Ver más</p>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-container">
+        <section class="hero-section">
+            <h2>Acercamos pacientes y especialistas médicos para un sistema de salud más accesible</h2>
+            <p>Nuestra misión es hacer que más personas puedan atenderse con profesionales calificados realizando citas de forma fácil y segura.</p>
+            <p>Descubre cómo podemos ayudarte si eres:</p>
+            <div class="user-selection">
+                <button class="button button-outline">Paciente</button>
+                <button class="button button-primary">Especialista</button>
+            </div>
+        </section>
+    </div>
+    
+    <section class="info-section">
+        <div class="main-container">
+            <div class="grid-content">
+                <div class="video-wrapper">
+                    <img src="imagenes/tablet_doc.png" alt="Profesional médico con tablet">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#6B6BF2">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="text-content">
+                    <h2>Separa tu cita en menos de 5min</h2>
+                    <p>Mira el video para aprender cómo utilizar CitaMed: busca especialistas, agenda tu cita y realiza pagos de forma rápida y segura. ¡Listo!</p>
+                    <div class="payment-icons">
+                        <img src="imagenes/VISA.png" alt="Visa">
+                        <img src="imagenes/YAPE.png" alt="Yape">
+                        <img src="imagenes/PLIN.png" alt="Plin">
+                        <img src="imagenes/PayPal.png" alt="PayPal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-wrapper">
+        <h2 class="cuarta">Beneficios de usar CitaMed</h2>
+        <div class="benefits-grid-wrapper">
+            <article class="feature-card">
+                <img src="imagenes/4.png" alt="Grupo de especialistas médicos" class="feature-image">
+                <h2 class="feature-title">Especialistas de confianza</h2>
+                <p class="feature-description">Accede a los mejores especialistas médicos certificados en tu área local.</p>
+            </article>
+    
+            <article class="feature-card">
+                <img src="imagenes/3.png" alt="Proceso de cita médica" class="feature-image">
+                <h2 class="feature-title">Agendamiento fácil y rápido</h2>
+                <p class="feature-description">Realiza tus citas médicas en pocos pasos y a cualquier hora del día.</p>
+            </article>
+    
+            <article class="feature-card">
+                <img src="imagenes/2.png" alt="Ahorro en consultas médicas" class="feature-image">
+                <h2 class="feature-title">Ahorro en cada consulta</h2>
+                <p class="feature-description">Obtén precios competitivos y sin sorpresas en tus consultas médicas.</p>
+            </article>
+    
+            <article class="feature-card">
+                <img src="imagenes/1.png" alt="Recordatorio de citas" class="feature-image">
+                <h2 class="feature-title">Recordatorios automáticos</h2>
+                <p class="feature-description">Recibe notificaciones para no olvidar ninguna cita médica importante.</p>
+            </article>
+        </div>
+    </div>
+
+    <div class="full-width-background">
+    <div class="container">
+        <h2 class="quinta">Médicos destacados en tu área</h2>
+        <button class="nav-button nav-prev">‹</button>
+        <div class="doctors-carousel">
+            <article class="doctor-card">
+                <div class="doctor-left">
+                    <img src="imagenes/PERFI1.png" alt="Dra. María Becerra" class="doctor-image">
+                    <div class="citations-count">55 citas</div>
+                    <span class="appointment-type type-rapida">CITA RÁPIDA</span>
+                </div>
+                <div class="doctor-right">
+                    <div class="doctor-name">
+                        <h2 class="doctor-name">Dra. María Becerra</h2>
+                        <span class="verified-badge">✓</span>
+                        <div class="rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-number">4.2</span>
+                        </div>
+                    </div>
+                    <div><h3 class="doctor-specialty">Cardiología</h3></div>
+                    <div class="info-item">
+                        <i class="icon-info fas fa-map-marker-alt" style="color: #0439d7;"></i>
+                        <span>Av. Simon Bolivar 342 Int. 2 - Clínica...</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="icon-info fas fa-hospital" style="color: #0439d7;"></i>
+                        <span>Consulta inicial: S/50</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon"><i class="fas fa-calendar"  style="color: #0439d7;"></i></span>
+                        <span>Próxima fecha: Lunes 20 Febrero</span>
+                    </div>
+                    <div class="time-slots">
+                        <button class="time-slot">11:00 AM</button>
+                        <button class="time-slot">11:30 AM</button>
+                        <button class="time-slot">12:00 PM</button>
+                        <span class="more-times">+</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="doctor-card">
+                <div class="doctor-left">
+                    <img src="imagenes/PERFIL2.png" alt="Dr. Juan Cabrera" class="doctor-image">
+                    <div class="citations-count">62 citas</div>
+                    <span class="appointment-type type-online">CITA ONLINE</span>
+                </div>
+                <div class="doctor-right">
+                    <div class="doctor-name">
+                        <h2 class="doctor-name">Dr. Juan Cabrera</h2>
+
+                        <span class="verified-badge">✓</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-number">4.2</span>
+                    </div>
+                    <div><h3 class="doctor-specialty">Ginecologia</h3></div>
+                    <div class="info-item">
+                        <i class="icon-info fas fa-map-marker-alt" style="color: #0439d7;"></i>
+                        <span>Clínica Interamericana</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="icon-info fas fa-hospital" style="color: #0439d7;"></i>
+                        <span>Consulta inicial: S/80</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon"><i class="fas fa-calendar"  style="color: #0439d7;"></i></span>
+                        <span>Próxima fecha: Lunes 20 Febrero</span>
+                    </div>
+                    <div class="time-slots">
+                        <button class="time-slot">03:00 PM</button>
+                        <button class="time-slot">04:30 PM</button>
+                        <button class="time-slot">05:00 PM</button>
+                        <span class="more-times">+</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="doctor-card">
+                <div class="doctor-left">
+                    <img src="imagenes/PERFIL3.png" alt="Dra. Claudia Songo" class="doctor-image">
+                    <div class="citations-count">55 citas</div>
+                    <span class="appointment-type type-presencial">PRESENCIAL</span>
+                </div>
+                <div class="doctor-right">
+                    <div class="doctor-name">
+                        <h2 class="doctor-name">Dra. Claudia Songo</h2>
+                        <span class="verified-badge">✓</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-number">4.2</span>
+                    </div>
+                    <div><h3 class="doctor-specialty">Pediatría</h3></div>
+                    <div class="info-item">
+                        <i class="icon-info fas fa-map-marker-alt" style="color: #0439d7;"></i>
+                        <span>Av. Circunvalación 234 Of. 302- Clíni...</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="icon-info fas fa-hospital" style="color: #0439d7;"></i>
+                        <span>Consulta inicial: S/70</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon"><i class="fas fa-calendar"  style="color: #0439d7;"></i></span>
+                        <span>Próxima fecha: Martes 21 Febrero</span>
+                    </div>
+                    <div class="time-slots">
+                        <button class="time-slot">11:00 AM</button>
+                        <button class="time-slot">11:30 AM</button>
+                        <button class="time-slot">12:00 PM</button>
+                        <span class="more-times">+</span>
+                    </div>
+                </div>
+                <button class="nav-button nav-next">›</button>
+            </article>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="app-universe">
+            <div class="content-orbit">
+                <div class="text-zone">
+                    <h3>Una app que lo hace aún más fácil</h3>
+                    <div class="benefit-card">
+                        <div class="tick-icon">✓</div>
+                        <p class="benefit-description">Agenda citas, recibe recordatorios y conecta con los profesionales de salud vía chat y videollamada.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="tick-icon">✓</div>
+                        <p class="benefit-description">Accede a citas rápidas, ubica centros de salud cercanos y mucho más.</p>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="#" class="app-store-link">
+                            <img src="imagenes/APSTORE.png" alt="App Store icon">
+                        </a>
+                        <a href="#" class="google-play-link">
+                            <img src="imagenes/PLYSTORE.png" alt="Google Play icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="visual-zone">
+                    <img src="imagenes/phone.png" alt="CitaMed App Screenshots" class="app-visual">
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="expert-panel-title">Los especialistas responden</h2>
+        <div class="carousel-area">
+            <button class="carousel-nav-button carousel-nav-prev">&lt;</button>
+            <div class="carousel-cards-wrapper">
+                
+                <div class="response-card">
+                    <p class="user-question">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="expert-response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile">
+                        <img src="imagenes/1-1.png" alt="Dr. Edgar Huarcaya" class="doctor-avatar-img">
+                        <div class="doctor-info-shadow">
+                            <div class="doctor-bio">
+                                <div class="doctor-info-block">
+                                    <span class="doctor-name">Dr. Edgar Huarcaya</span>
+                                    <span class="doctor-location">Huancayo</span>
+                                    <span class="doctor-experience">10 EXP</span>
+                                    <span class="doctor-rating">
+                                        <span class="star-symbol">★</span>
+                                        <span class="estre">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="doctor-specialization">Gastroenterología</h4>
+                            </div>
+                            <p class="specialist-answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="response-card">
+                    <p class="user-question">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="expert-response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile">
+                        <img src="imagenes/1-1.png" alt="Dr. Edgar Huarcaya" class="doctor-avatar-img">
+                        <div class="doctor-info-shadow">
+                            <div class="doctor-bio">
+                                <div class="doctor-info-block">
+                                    <span class="doctor-name">Dr. Edgar Huarcaya</span>
+                                    <span class="doctor-location">Huancayo</span>
+                                    <span class="doctor-experience">10 EXP</span>
+                                    <span class="doctor-rating">
+                                        <span class="star-symbol">★</span>
+                                        <span class="estre">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="doctor-specialization">Gastroenterología</h4>
+                            </div>
+                            <p class="specialist-answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+        
+
+                <div class="response-card">
+                    <p class="user-question">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="expert-response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile">
+                        <img src="imagenes/1-1.png" alt="Dr. Edgar Huarcaya" class="doctor-avatar-img">
+                        <div class="doctor-info-shadow">
+                            <div class="doctor-bio">
+                                <div class="doctor-info-block">
+                                    <span class="doctor-name">Dr. Edgar Huarcaya</span>
+                                    <span class="doctor-location">Huancayo</span>
+                                    <span class="doctor-experience">10 EXP</span>
+                                    <span class="doctor-rating">
+                                        <span class="star-symbol">★</span>
+                                        <span class="estre">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="doctor-specialization">Gastroenterología</h4>
+                            </div>
+                            <p class="specialist-answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                
+            </div>
+            <button class="carousel-nav-button carousel-nav-next">&gt;</button>
+        </div>
+        
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="imagenes/logo.png" alt="CitaMed Logo">
+                    </div>
+                    <div class="newsletter">
+                        <p>Únete a nuestro newsletter para recibir nuestras últimas noticias y promociones sanitarias.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Ingresa tu correo electrónico aquí">
+                            <button type="submit" class="newsletter-button">➔</button>
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="footer-column">
+                    <h3>Para los pacientes</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Especialistas</a></li>
+                        <li><a href="#">Clínicas</a></li>
+                        <li><a href="#">Pregunta al Especialista</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-column">
+                    <h3>Para profesionales</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Servicios para especialistas</a></li>
+                        <li><a href="#">Guías para especialistas</a></li>
+                        <li><a href="#">Consulta online</a></li>
+                        <li><a href="#">CitaMed Pro</a></li>
+                        <li><a href="#">Precios</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-column">
+                    <h3>Servicio</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacidad y cookies</a></li>
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">App CitaMed</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-column">
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="imagenes/instagram.png" alt="Instagram">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="imagenes/facebook.png" alt="Facebook">
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="imagenes/twitter.png" alt="Twitter">
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <img src="imagenes/Menu inferior.png" alt="CitaMed Logo">
+        </div>
+        
+    
+    
+    <script src="java.js"></script>
+</body>
+</html>
