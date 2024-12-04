@@ -1,0 +1,478 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=check" />
+    <link rel="stylesheet" href="{% static 'css/style-pregunta-especialista.css' %}">
+    <title>CitaMed2</title>
+</head>
+<body>
+    
+    <div class="inicio-header" id="inicio">
+        <div class="header">
+            <img src="image/logo.png" alt="Logo">
+            
+            <div class="text-a">
+                <a href="#">Cómo funciona</a>
+                <a href="#">Pregunta al especialista</a>
+                <a href="#">Soy profesional médico</a>
+            </div>
+            
+            <div class="boton">
+                <button class="registro">Registrarme <ion-icon name="chevron-down-outline"></ion-icon></button>
+                <button class="login">Iniciar Sesión</button>
+            </div>
+        </div>
+
+
+        <div class="cont-inicio">
+            <div class="img-fondo">
+                <img src="image/Grupo 3715.png" alt="Doctor sonriente">
+                
+                <div class="contenido-inicio">
+                    <p>BUSCA AYUDA Y RESUELVE TUS DUDAS</p>
+                    <h1>Preguntale a un especialista</h1>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="tick-icon">✓</div>Médicos verificados a tu disposición.
+                        </li>
+                        <li class="feature-item">
+                            <div class="tick-icon">✓</div>Hazlo de forma anónima y gratuita.
+                        </li>
+                        <li class="feature-item">
+                            <div class="tick-icon">✓</div>Obtén respuesta en 48hrs.
+                        </li>
+                    </ul>
+                    
+                    <div class="button-container">
+                        <div class="button button-outline">Más información</div>
+                        <div class="button button-filled">Empezar ahora</div>
+                    </div>
+            
+                </div>    
+            </div>
+
+
+        </div>
+        <nav class="specialties-nav">
+            <h2 class="specialties-title">Especialidades:</h2>
+            <div class="specialties-p">
+                <p class="specialty-p">Pediatría</p>
+                <p class="specialty-p">Nutrición</p>
+                <p class="specialty-p">Cardiología</p>
+                <p class="specialty-p">Psicología</p>
+                <p class="specialty-p">Obstetricia</p>
+                <p class="specialty-p">Ginecologia</p>
+                <p class="specialty-p">Ver más</p>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="form-container">
+        <h2>Haz una pregunta:</h2>
+
+        <label class="specialty-label">
+            <span><i class="fas fa-briefcase-medical specialty-icon" style="color: #3478ef;"></i></span> ELIGE UNA ESPECIALIDAD (OPCIONAL)
+        </label>
+        
+        <div class="custom-select" id="specialtySelect">
+            <button type="button" class="select-button" onclick="toggleSelect()">
+                Escribe aquí o selecciona de la lista
+            </button>
+            <div class="select-options">
+                <div class="option" onclick="selectOption('Cardiología')">Cardiología</div>
+                <div class="option" onclick="selectOption('Odontología')">Odontología</div>
+                <div class="option" onclick="selectOption('Psicología')">Psicología</div>
+                <div class="option" onclick="selectOption('Nutrición')">Nutrición</div>
+            </div>
+        </div>
+
+        <div class="textarea-container">
+            <textarea 
+                placeholder="Escribe tu pregunta aquí..." 
+                maxlength="500"
+                oninput="updateCharCount(this)"
+            ></textarea>
+            <div class="char-count">0/500</div>
+        </div>
+    </div>
+
+
+    <div class="consultorio-caja">
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">Intenta que tu consulta médica sea clara y breve.</span>
+        </div>
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">Este servicio no reemplaza una consulta con un profesional de salud.</span>
+        </div>
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">No se permiten preguntas sobre casos específicos o segundas opiniones.</span>
+        </div>
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">Por cuestiones de salud, no se publicarán cantidades ni dosis de medicamentos.</span>
+        </div>
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">Si te encuentras en una emergencia, acude a tu médico o a los servicios de urgencia.</span>
+        </div>
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">La pregunta irá dirigida a todos los doctores de CitaMed, o la especialidad que especifiques.</span>
+        </div>
+        <div class="pauta-item">
+            <span class="icono-verde material-symbols-outlined">check</span>
+            <span class="texto-guia">Tu consulta aparecerá de forma pública. Si deseas hacer una consulta anónima, asegúrate de marcar la opción.</span>
+        </div>
+        
+        <div class="pregunta-anonima">
+            <span class="burbuja-interrogante">?</span>
+            <span class="texto-pregunta">¿PUBLICAR DE FORMA ANÓNIMA?</span>
+        </div>
+        
+        <div class="opciones-privacidad">
+            <div class="opcion-radio">
+                <input type="radio" id="si" name="anonymous" value="si">
+                <label class="etiqueta-radio" for="si">Sí</label>
+            </div>
+            <div class="opcion-radio">
+                <input type="radio" id="no" name="anonymous" value="no">
+                <label class="etiqueta-radio" for="no">No</label>
+            </div>
+        </div>
+        
+        <div class="contenedor-terminos-boton">
+            <div class="aceptacion-terminos">
+                <input type="checkbox" id="terms">
+                <label class="texto-terminos" for="terms">Al continuar, acepto los <a href="#">Términos y Condiciones</a></label>
+            </div>
+            <button class="boton-enviar">Enviar</button>
+        </div>
+    </div>
+
+
+    <div class="magic-container">
+        <h4 class="title-enigma">¿Cómo funciona pregunta al especialista?</h4>
+        <div class="step-grid">
+            <div class="journey-cards">
+                <div class="adventure-card">
+                    <div class="card-header">
+                        <span class="step-number">1</span>
+                        <div>
+                            <h2 class="step-title">Los pacientes preguntan</h2>
+                            <p class="step-description">Realiza una pregunta breve sobre tu problema de salud.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="adventure-card">
+                    <div class="card-header">
+                        <span class="step-number">2</span>
+                        <div>
+                            <h2 class="step-title">Tu pregunta será revisada</h2>
+                            <p class="step-description">Serán verificadas por un moderador antes de ser enviadas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="adventure-card">
+                    <div class="card-header">
+                        <span class="step-number">3</span>
+                        <div>
+                            <h2 class="step-title">Los especialistas responden</h2>
+                            <p class="step-description">Una pregunta puede recibir respuestas de más de un especialista.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="adventure-card">
+                    <div class="card-header">
+                        <span class="step-number">4</span>
+                        <div>
+                            <h2 class="step-title">¡Tu duda queda solucionada!</h2>
+                            <p class="step-description">Te informaremos por correo electrónico de las respuestas que recibas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-wizard">
+                <div class="laptop-image-frame">
+                    <img src="image/fondo2.png" alt="Ilustración de laptop">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-wrapper">
+        <h3 class="title-heading">Últimas preguntas respondidas</h3>
+        <div class="carousel-container">
+            <div class="carousel-content-wrapper">
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-card-item carousel-slide">
+                    <p class="question-text">"Me recetaron tomar azolium 40mg una vez al día, tomar dos al día puede hacer mal al organismo causar efectos u alguna otra cosa? Muchas gracias."</p>
+                    <h3 class="response-label">Respuesta del especialista</h3>
+                    <div class="doctor-profile-wrapper">
+                        <img src="image/1-1.png" alt="Dr. Edgar Huarcaya" class="avatar-image">
+                        <div class="info-shadow-box">
+                            <div class="bio-info">
+                                <div class="info-block">
+                                    <span class="doctor-name-text">Dr. Edgar Huarcaya</span>
+                                    <span class="location-text">Huancayo</span>
+                                    <span class="experience-text">10 EXP</span>
+                                    <span class="rating-wrapper">
+                                        <span class="star-icon">★</span>
+                                        <span class="rating-text">4.8</span>
+                                    </span>
+                                </div>
+                                <h4 class="specialization-text">Gastroenterología</h4>
+                            </div>
+                            <p class="answer-text">Buenos días, la dosis dependerá de su diagnóstico endoscópico. Solo debe tomar el tiempo que le indicó su médico tratante.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-nav-button prev" onclick="moveCarousel(-1)">❮</button>
+            <button class="carousel-nav-button next" onclick="moveCarousel(1)">❯</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="logo">
+                    <img src="image/logo.png" alt="CitaMed Logo">
+                </div>
+                <div class="newsletter">
+                    <p>Únete a nuestro newsletter para recibir nuestras últimas noticias y promociones sanitarias.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Ingresa tu correo electrónico aquí">
+                        <button type="submit" class="newsletter-button">➔</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Para los pacientes</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Especialistas</a></li>
+                    <li><a href="#">Clínicas</a></li>
+                    <li><a href="#">Pregunta al Especialista</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Para profesionales</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Servicios para especialistas</a></li>
+                    <li><a href="#">Guías para especialistas</a></li>
+                    <li><a href="#">Consulta online</a></li>
+                    <li><a href="#">CitaMed Pro</a></li>
+                    <li><a href="#">Precios</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Servicio</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacidad y cookies</a></li>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">App CitaMed</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <img src="image/instagram.png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="image/facebook.png" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="image/twitter.png" alt="Twitter">
+                        <span>Twitter</span>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <div class="ultima">
+        <div class="copyright">© 2023 CitaMed. Todos los Derechos Reservados.</div>
+        <div class="politica">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos de Servicio</a>
+        </div>
+    </div>
+    
+
+
+
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        function moveCarousel(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            document.querySelector('.carousel-content-wrapper').style.transform = `translateX(-${currentSlide * (slides[0].offsetWidth + 20)}px)`;
+        }
+    </script>
+
+
+    
+</body>
+</html>
