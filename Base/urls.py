@@ -7,6 +7,9 @@ urlpatterns = [
     path('list-especialidad/<slug:slug>/', ListEspecialistas.as_view(), name='list-especialidad'),
 
     # REGISTRO
-    path('registro-especialista', DoctorMultiStepForm.as_view(), name='registro-especialista'),
+    path('registro-especialista/', DoctorMultiStepForm.as_view(), name='registro-especialista'),
+
+    path('index2/', Index2View.as_view(), name='index2'),
+    path('index3/', Index3View.as_view(), name='index3',)
 
 ]

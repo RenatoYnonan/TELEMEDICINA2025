@@ -55,3 +55,10 @@ class DoctorMultiStepForm(SessionWizardView):
         DoctorModels.objects.create(**data)
 
         return render(self.request, 'base/confirmacion-registro-doctor.html', {'data': data})
+
+class Index2View(generic.TemplateView):
+    template_name = 'base/index2.html'  
+
+class Index3View(generic.TemplateView):
+    template_name = 'base/index3.html'
+
